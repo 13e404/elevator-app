@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ category }}</title>
+</head>
+<body>
+
+<h2>بخش: {{ category }}</h2>
+
+<!-- فرم ثبت -->
+<form method="POST">
+    <input name="project" placeholder="نام پروژه"><br><br>
+    <input name="qty" placeholder="تعداد"><br><br>
+    <input name="status" placeholder="وضعیت"><br><br>
+    <button type="submit">ثبت</button>
+</form>
+
+<hr>
+
+<!-- جدول -->
+<table border="1" cellpadding="10">
+    <tr>
+        <th>ID</th>
+        <th>پروژه</th>
+        <th>تعداد</th>
+        <th>وضعیت</th>
+    </tr>
+
+    {% for row in rows %}
+    <tr>
+        <td>{{ row[0] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td>{{ row[4] }}</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<a href="/">برگشت به داشبورد</a>
+
+</body>
+</html>
